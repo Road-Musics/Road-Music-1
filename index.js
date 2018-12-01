@@ -440,4 +440,11 @@ client.on('message', message => {
     }
 });
 
+client.on('ready', async () => {
+	console.log(`Client is ready.`);
+	console.log();
+	console.log(`Logged in ${client.user.tag}`);
+  client.generateInvite(['ADMINISTRATOR']).then(link => console.log(link));
+  client.user.setActivity('Type 1help', {type: 1, url: "https://twitch.tv/Ninja"});
+
 client.login(process.env.BOT_TOKEN);
